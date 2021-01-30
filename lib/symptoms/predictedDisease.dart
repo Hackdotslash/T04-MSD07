@@ -85,17 +85,8 @@ class _PredictDiseaseState extends State<PredictDisease> {
                                     fontWeight: FontWeight.w500,
                                     color: Colors.black),
                               )));
-                  } else {
-                    predictedDiseases.add(ListTile(
-                      title: Text(
-                        "None",
-                        style: TextStyle(
-                            fontSize: 20.5,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black),
-                      ),
-                    ));
-                  }
+=======
+                  } 
                 }
                 return Padding(
                   padding: const EdgeInsets.all(12.0),

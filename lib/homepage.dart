@@ -1,18 +1,15 @@
-import 'package:Learn1/HomeRemediesInfo.dart';
-import 'package:Learn1/RemedyInfoPage.dart';
-import 'package:Learn1/RemedyPage.dart';
-import 'package:Learn1/email_signup.dart';
-import 'package:Learn1/signup.dart';
-import 'package:Learn1/email_login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:dotslash/symptoms/symptomsInput.dart';
+import 'services/email_login.dart';
+import 'package:dotslash/diseaseInfo/RemedyPage.dart';
 import 'Symptoms/symptomsInput.dart';
 import 'services/email_login.dart';
 import 'package:dotslash/diseaseInfo/RemedyPage.dart';
 
 
 import 'email_login.dart';
+
 
 
 class HomePage extends StatefulWidget {
@@ -39,7 +36,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hello"),
+        title: Text("Aarogyaam Cure"),
+        centerTitle: true,
         actions: [
           IconButton(
             icon: Icon(
