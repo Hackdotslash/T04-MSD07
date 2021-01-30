@@ -85,7 +85,8 @@ class _PredictDiseaseState extends State<PredictDisease> {
                                     fontWeight: FontWeight.w500,
                                     color: Colors.black),
                               )));
-                  }
+=======
+                  } 
                 }
                 return Padding(
                   padding: const EdgeInsets.all(12.0),

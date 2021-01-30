@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">595296377739-8gbg8ifdve7vbssd5u9rq73gulbv257l.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">595296377739</string>
+    <string name="google_api_key" translatable="false">AIzaSyArZ3sX7dv1oq8MlrBiCMpCMdQvRR6IaXg</string>
+    <string name="google_app_id" translatable="false">1:595296377739:android:2bf4a3ecb1f2b2b1652d8e</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyArZ3sX7dv1oq8MlrBiCMpCMdQvRR6IaXg</string>
+    <string name="google_storage_bucket" translatable="false">ar-vr-e9f76.appspot.com</string>
+    <string name="project_id" translatable="false">ar-vr-e9f76</string>
+</resources>

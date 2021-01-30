@@ -3,6 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:dotslash/symptoms/symptomsInput.dart';
 import 'services/email_login.dart';
 import 'package:dotslash/diseaseInfo/RemedyPage.dart';
+import 'Symptoms/symptomsInput.dart';
+import 'services/email_login.dart';
+import 'package:dotslash/diseaseInfo/RemedyPage.dart';
+
+
+import 'email_login.dart';
+
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -20,7 +28,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   initUser() async {
-    user = _auth.currentUser;
+    user = await _auth.currentUser;
     setState(() {});
   }
 
