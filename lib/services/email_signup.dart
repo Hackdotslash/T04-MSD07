@@ -24,11 +24,18 @@ class _EmailSignUpState extends State<EmailSignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Sign Up")),
+        appBar: AppBar(
+          title: Text("Sign Up"),
+          centerTitle: true,
+          backgroundColor: Color.fromRGBO(14, 49, 80, 1),
+        ),
         body: Form(
             key: _formKey,
             child: SingleChildScrollView(
                 child: Column(children: <Widget>[
+              SizedBox(
+                height: 50,
+              ),
               Padding(
                 padding: EdgeInsets.all(20.0),
                 child: TextFormField(
@@ -115,7 +122,7 @@ class _EmailSignUpState extends State<EmailSignUp> {
                 child: isLoading
                     ? CircularProgressIndicator()
                     : RaisedButton(
-                        color: Colors.lightBlue,
+                        color: Color.fromRGBO(14, 49, 80, 1),
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
                             setState(() {
@@ -124,7 +131,10 @@ class _EmailSignUpState extends State<EmailSignUp> {
                             registerToFb();
                           }
                         },
-                        child: Text('Submit'),
+                        child: Text(
+                          'Submit',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
               )
             ]))));

@@ -8,6 +8,7 @@ import 'services/disease_predict_model.dart';
 import 'services/email_login.dart';
 import 'package:dotslash/diseaseInfo/RemedyPage.dart';
 import 'package:dotslash/displayEvents/showEvents.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -33,8 +34,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Aarogyam Cure"),
+        title: Text("Aarogyam Care"),
         centerTitle: true,
+        backgroundColor: Color.fromRGBO(14, 49, 80, 1),
         actions: [
           IconButton(
             icon: Icon(
@@ -137,27 +139,113 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: Center(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Card(
+      body: SingleChildScrollView(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
+            Widget>[
+          Container(
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  SizedBox(
+                    height: 25,
+                  ),
+                  CarouselSlider(
+                      //height: 400.0,
+                      initialPage: 0,
+                      enlargeCenterPage: true,
+                      autoPlay: true,
+                      reverse: false,
+                      enableInfiniteScroll: true,
+                      autoPlayInterval: Duration(seconds: 5),
+                      autoPlayAnimationDuration: Duration(milliseconds: 3000),
+                      pauseAutoPlayOnTouch: Duration(seconds: 10),
+                      scrollDirection: Axis.horizontal,
+                      onPageChanged: (index) {
+                        setState(() {});
+                      },
+                      items: [
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0),
+                              image: DecorationImage(
+                                image: AssetImage('assets/img1.jpg'),
+                                fit: BoxFit.cover,
+                              )),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0),
+                              image: DecorationImage(
+                                image: AssetImage('assets/img1.jpg'),
+                                fit: BoxFit.cover,
+                              )),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0),
+                              image: DecorationImage(
+                                image: AssetImage('assets/img1.jpg'),
+                                fit: BoxFit.cover,
+                              )),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0),
+                              image: DecorationImage(
+                                image: AssetImage('assets/img1.jpg'),
+                                fit: BoxFit.cover,
+                              )),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0),
+                              image: DecorationImage(
+                                image: AssetImage('assets/img1.jpg'),
+                                fit: BoxFit.cover,
+                              )),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10.0),
+                              image: DecorationImage(
+                                image: AssetImage('assets/img1.jpg'),
+                                fit: BoxFit.cover,
+                              )),
+                        )
+                      ]),
+                ]),
+          ),
+          SizedBox(height: 25),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+            child: Container(
+              color: Colors.blue[100],
+              padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 30.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
                 child: InkWell(
                     child: Text("Home Remedies"),
                     onTap: () {
                       Navigator.push(
                         this.context,
-                        // ignore: missing_return
                         MaterialPageRoute(
                           builder: (context) => RemedyPage(),
                         ),
                       );
                     }),
               ),
-              SizedBox(
-                height: 10,
-              ),
-              Card(
+            ),
+          ),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+            child: Container(
+              color: Colors.blue[100],
+              padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 30.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
                 child: InkWell(
                     child: Text("Skin Dieses Prediction"),
                     onTap: () {
@@ -170,26 +258,16 @@ class _HomePageState extends State<HomePage> {
                       );
                     }),
               ),
-              SizedBox(
-                height: 10,
-              ),
-              Card(
-                child: InkWell(
-                    child: Text("Doctor near me"),
-                    onTap: () {
-                      Navigator.push(
-                        this.context,
-                        // ignore: missing_return
-                        MaterialPageRoute(
-                          builder: (context) => MyMap(),
-                        ),
-                      );
-                    }),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Card(
+            ),
+          ),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+            child: Container(
+              color: Colors.blue[100],
+              padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 30.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
                 child: InkWell(
                     child: Text("Chatbot"),
                     onTap: () {
@@ -202,7 +280,34 @@ class _HomePageState extends State<HomePage> {
                       );
                     }),
               ),
-            ]),
+            ),
+          ),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+            child: Container(
+              color: Colors.blue[100],
+              padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 30.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                child: InkWell(
+                    child: Text("Doctor near me"),
+                    onTap: () {
+                      Navigator.push(
+                        this.context,
+                        // ignore: missing_return
+                        MaterialPageRoute(
+                          builder: (context) => MyMap(),
+                        ),
+                      );
+                    }),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+        ]),
       ),
     );
   }

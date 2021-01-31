@@ -14,57 +14,71 @@ class SignUp extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(this.title),
+          backgroundColor: Color.fromRGBO(14, 49, 80, 1),
+          centerTitle: true,
         ),
         body: Center(
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: Text("Meet Up",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30,
-                          fontFamily: 'Roboto')),
-                ),
-                Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: SignInButton(
-                      Buttons.Email,
-                      text: "Sign up with Email",
-                      onPressed: () {
-                        Navigator.push(
-                          context,
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <
+              Widget>[
+            Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Image.asset(
+                  "assets/logo.png",
+                  width: 137,
+                  height: 137,
+                )),
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text("Aarogya Care",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      fontFamily: 'Roboto')),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+                padding: EdgeInsets.all(10.0),
+                child: SignInButton(
+                  Buttons.Email,
+                  text: "Sign up with Email",
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => EmailSignUp()),
+                    );
+                  },
+                )),
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: SignInButton(
+                Buttons.Google,
+                text: "Sign up with Google",
+                onPressed: () {
+                  signInWithGoogle().then(
+                    (result) {
+                      if (result != null) {
+                        Navigator.of(context).push(
                           MaterialPageRoute(
-                              builder: (context) => EmailSignUp()),
+                            builder: (context) {
+                              return HomePage();
+                            },
+                          ),
                         );
-                      },
-                    )),
-                Padding(
-                  padding: EdgeInsets.all(10.0),
-                  child: SignInButton(
-                    Buttons.Google,
-                    text: "Sign up with Google",
-                    onPressed: () {
-                      signInWithGoogle().then(
-                        (result) {
-                          if (result != null) {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return HomePage();
-                                },
-                              ),
-                            );
-                          }
-                        },
-                      );
+                      }
                     },
-                  ),
-                ),
-                Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: FlatButton(
+                  );
+                },
+              ),
+            ),
+            Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Row(
+                  children: [
+                    SizedBox(width: 60),
+                    Text("Already have an account?"),
+                    FlatButton(
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -73,11 +87,13 @@ class SignUp extends StatelessWidget {
                       },
                       child: Text('Login',
                           style: new TextStyle(
-                            color: Colors.blue,
+                            color: Color.fromRGBO(14, 49, 80, 1),
                             fontWeight: FontWeight.bold,
                           )),
-                    ))
-              ]),
+                    ),
+                  ],
+                ))
+          ]),
         ));
   }
 }

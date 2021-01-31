@@ -19,11 +19,18 @@ class _EmailLogInState extends State<EmailLogIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Login")),
+        appBar: AppBar(
+          title: Text("Login"),
+          centerTitle: true,
+          backgroundColor: Color.fromRGBO(14, 49, 80, 1),
+        ),
         body: Form(
             key: _formKey,
             child: SingleChildScrollView(
                 child: Column(children: <Widget>[
+              SizedBox(
+                height: 150,
+              ),
               Padding(
                 padding: EdgeInsets.all(20.0),
                 child: TextFormField(
@@ -72,7 +79,7 @@ class _EmailLogInState extends State<EmailLogIn> {
                 child: isLoading
                     ? CircularProgressIndicator()
                     : RaisedButton(
-                        color: Colors.lightBlue,
+                        color: Color.fromRGBO(14, 49, 80, 1),
                         onPressed: () {
                           if (_formKey.currentState.validate()) {
                             setState(() {
@@ -81,7 +88,10 @@ class _EmailLogInState extends State<EmailLogIn> {
                             logInToFb();
                           }
                         },
-                        child: Text('Submit'),
+                        child: Text(
+                          'Submit',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
               )
             ]))));
